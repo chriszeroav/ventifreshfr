@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Footer, Header, TopHeader } from "@/components/layout";
 import "./globals.css";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import { Toaster } from "sonner";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,11 +22,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="es">
+      <body className={`${poppins.variable}`}>
+        <div
+          className={cn(
+            "min-h-dvh grid grid-rows-[auto_1fr_auto]",
+            "lg:grid-rows-[auto_auto_1fr_auto]"
+          )}
+        >
+          <TopHeader />
+          <Header />
+          {children}
+          <Footer />
+        </div>
+        <Toaster />
       </body>
     </html>
   );
