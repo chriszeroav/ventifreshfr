@@ -48,7 +48,7 @@ const ContactItem: FC<ContactItemProps> = ({
 export const TopHeader = () => {
   return (
     <section className="px-4 hidden lg:block">
-      <div className="max-w-7xl w-full h-14 flex justify-end">
+      <div className="max-w-7xl mx-auto w-full h-14 flex justify-end">
         <ContactItem
           icon={<MailIcon className="size-8 text-primary-600" />}
           label="Correo"

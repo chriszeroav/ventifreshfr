@@ -1,3 +1,11 @@
+import { Hero } from "@/components/home";
+import { Contact } from "@/components/layout";
+
 export default function Home() {
-  return <main>Hola</main>;
+  return (
+    <main>
+      <Hero />
+      <Contact />
+    </main>
+  );
 }
