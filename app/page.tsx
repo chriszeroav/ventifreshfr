@@ -1,10 +1,13 @@
-import { Hero } from "@/components/home";
-import { Contact } from "@/components/layout";
+import { About, Hero, Services } from "@/components/home";
+import { Brands, Contact } from "@/components/layout";
 
 export default function Home() {
   return (
-    <main>
+    <main className="flex flex-col gap-32">
       <Hero />
+      <Services />
+      <About />
+      <Brands />
       <Contact />
     </main>
   );

@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Toaster } from "sonner";
-import { cn } from "@/lib/utils";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -24,18 +23,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.variable}`}>
-        <div
-          className={cn(
-            "min-h-dvh grid grid-rows-[auto_1fr_auto]",
-            "lg:grid-rows-[auto_auto_1fr_auto]"
-          )}
-        >
+        <div>
           <TopHeader />
           <Header />
           {children}
           <Footer />
         </div>
-        <Toaster />
+        <Toaster richColors />
       </body>
     </html>
   );

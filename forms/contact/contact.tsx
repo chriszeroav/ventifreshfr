@@ -15,17 +15,20 @@ import {
   Input,
 } from "@/components/shadcn";
 import { Textarea } from "@/components/shadcn/textarea";
+import { ContactFormValues } from "@/types";
+import { useSendMessage } from "@/hooks/contact";
 
 const formSchema = z.object({
-  name: z.string().min(2).max(50),
+  name: z.string().min(2, "El nombre debe tener al menos 2 caracteres").max(50),
   email: z.email(),
-  message: z.string().min(10).max(500),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
 });
 
 interface ContactProps {}
 
 export const Contact: FC<ContactProps> = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const [sendMessage, loading] = useSendMessage();
+  const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -34,8 +37,13 @@ export const Contact: FC<ContactProps> = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: ContactFormValues) {
+    try {
+      await sendMessage(values);
+      form.reset();
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
   }
 
   return (
@@ -54,6 +62,7 @@ export const Contact: FC<ContactProps> = () => {
                 <Input
                   className="h-12 bg-white shadow placeholder:text-neutral-400 text-neutral-900"
                   placeholder="Ingresa tu nombre"
+                  disabled={loading}
                   {...field}
                 />
               </FormControl>
@@ -76,6 +85,7 @@ export const Contact: FC<ContactProps> = () => {
                 <Input
                   className="h-12 bg-white shadow placeholder:text-neutral-400 text-neutral-900"
                   placeholder="Ingresa tu correo"
+                  disabled={loading}
                   {...field}
                 />
               </FormControl>
@@ -94,6 +104,7 @@ export const Contact: FC<ContactProps> = () => {
                 <Textarea
                   className="resize-none bg-white shadow placeholder:text-neutral-400 text-neutral-900"
                   placeholder="Ingresa tu mensaje"
+                  disabled={loading}
                   {...field}
                 />
               </FormControl>
@@ -101,8 +112,8 @@ export const Contact: FC<ContactProps> = () => {
             </FormItem>
           )}
         />
-        <Button className="h-12 text-lg" type="submit">
-          Enviar Mensaje
+        <Button className="h-12 text-lg" type="submit" disabled={loading}>
+          {loading ? "Enviando..." : "Enviar Mensaje"}
         </Button>
       </form>
     </Form>
