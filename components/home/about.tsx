@@ -6,8 +6,8 @@ interface AboutProps {}
 
 export const About: FC<AboutProps> = () => {
   return (
-    <section className="px-4 bg-neutral-200/40">
-      <div className="max-w-7xl w-full mx-auto py-20 grid grid-cols-2 gap-20">
+    <section className="px-4">
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-2 gap-20">
         <img className="h-full object-cover" src="/nosotros.webp" alt="" />
         <div className="flex flex-col gap-6 ">
           <h2 className="text-5xl font-medium text-primary-900">

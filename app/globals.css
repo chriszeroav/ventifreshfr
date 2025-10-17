@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 @theme {
-  --font-poppins: var(--font-poppins);
+  --font-inter: var(--font-inter);
 
   --color-primary-50: #f1f9fe;
   --color-primary-100: #e2f3fc;
@@ -18,5 +18,5 @@
 }
 
 body {
-  font-family: var(--font-poppins);
+  font-family: var(--font-inter);
 }

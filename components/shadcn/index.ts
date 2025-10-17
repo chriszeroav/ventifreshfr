@@ -4,3 +4,5 @@ export * from "./hover-card";
 export * from "./label";
 export * from "./input";
 export * from "./form";
+export * from "./button";
+export * from "./carousel";
