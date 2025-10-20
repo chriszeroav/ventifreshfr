@@ -4,3 +4,6 @@ export * from "./energy-leaf";
 export * from "./handshake";
 export * from "./headset";
 export * from "./air-filter";
+export * from "./target";
+export * from "./rocket";
+export * from "./heart";
