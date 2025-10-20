@@ -8,7 +8,6 @@ export default function Home() {
       <Services />
       <Brands />
       <WhyUs />
-      <Contact />
     </main>
   );
 }

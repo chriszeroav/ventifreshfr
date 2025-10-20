@@ -76,36 +76,36 @@ const WhyUsCard: FC<WhyUsCardProps> = ({
   return (
     <div
       className={cn(
-        "flex flex-col gap-2 p-6",
-        active ? "bg-primary-600" : "bg-neutral-200/20"
+        "flex flex-col gap-6 p-6",
+        active ? "bg-primary-600" : "bg-neutral-200/30"
       )}
     >
-      <div className="flex flex-col gap-10">
-        <div
-          className={cn(
-            "size-12 rounded-full flex items-center justify-center text-white",
-            active ? "bg-white/30" : "bg-primary-600"
-          )}
-        >
-          <IconComponent className="size-6" />
-        </div>
+      <div
+        className={cn(
+          "size-12 rounded-full flex items-center justify-center text-white",
+          active ? "bg-white/30" : "bg-primary-600"
+        )}
+      >
+        <IconComponent className="size-6" />
+      </div>
+      <div className="flex flex-col gap-2">
         <h3
           className={cn(
-            "text-xl font-medium",
+            "text-lg font-medium",
             active ? "text-white" : "text-primary-900"
           )}
         >
           {title}
         </h3>
+        <p
+          className={cn(
+            "leading-relaxed font-light",
+            active ? "text-white" : "text-neutral-600"
+          )}
+        >
+          {description}
+        </p>
       </div>
-      <p
-        className={cn(
-          "leading-relaxed font-light text-sm",
-          active ? "text-white" : "text-neutral-600"
-        )}
-      >
-        {description}
-      </p>
     </div>
   );
 };
@@ -113,12 +113,28 @@ const WhyUsCard: FC<WhyUsCardProps> = ({
 export const WhyUs: FC<WhyUsProps> = () => {
   return (
     <section className="px-4">
-      <div className="max-w-7xl mx-auto w-full py-20 flex flex-col gap-16">
-        <h2 className="text-2xl lg:text-3xl xl:text-5xl font-medium text-primary-900">
+      <div
+        className={cn(
+          "max-w-7xl w-full",
+          "flex flex-col gap-8 lg:gap-12",
+          "mx-auto py-10 lg:py-20"
+        )}
+      >
+        <h2
+          className={cn(
+            "font-medium text-primary-900",
+            "text-3xl lg:text-4xl xl:text-5xl"
+          )}
+        >
           ¿Por qué elegirnos?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+        <div
+          className={cn(
+            "grid grid-cols-1 gap-6",
+            "sm:grid-cols-2 lg:grid-cols-3 xl:gap-8"
+          )}
+        >
           {whyUsData.map((item) => (
             <WhyUsCard
               key={item.id}

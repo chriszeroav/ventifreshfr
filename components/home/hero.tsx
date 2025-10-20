@@ -62,8 +62,8 @@ export const Hero: FC<HeroProps> = () => {
     <section className="px-4">
       <div
         className={cn(
-          "max-w-7xl w-full mx-auto py-10 lg:py-20",
-          "flex flex-col gap-10",
+          "max-w-7xl w-full mx-auto pt-10 pb-16 lg:pb-20",
+          "flex flex-col gap-8",
           "lg:grid lg:grid-cols-[3fr_2fr]",
           "xl:grid-cols-[4fr_3fr] xl:gap-16"
         )}
@@ -73,7 +73,7 @@ export const Hero: FC<HeroProps> = () => {
             <div className="flex flex-col gap-2 lg:gap-4">
               <h1
                 className={cn(
-                  "font-medium text-primary-900 leading-tight",
+                  "font-semibold text-primary-900 leading-tight",
                   "text-3xl lg:text-5xl xl:text-6xl"
                 )}
               >
@@ -120,7 +120,7 @@ export const Hero: FC<HeroProps> = () => {
           <img
             className={cn(
               "object-cover w-full h-full",
-              "aspect-[1/1.3] sm:aspect-square md:aspect-video"
+              "aspect-[1/1.3] sm:aspect-video"
             )}
             src="/inicio.webp"
             alt="Hero Ventifresh FR"

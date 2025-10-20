@@ -25,7 +25,9 @@ export const Header: FC<HeaderProps> = async () => {
           "flex items-center justify-between"
         )}
       >
-        <img className="h-full" src="/logo.png" alt="" />
+        <Link className="h-full" href="/">
+          <img className="h-full" src="/logo.png" alt="" />
+        </Link>
 
         <nav>
           <div className="hidden md:flex items-center gap-6">
@@ -77,7 +79,7 @@ export const Header: FC<HeaderProps> = async () => {
             </HoverCard>
             <Link
               className="hover:text-primary-600 transition-colors"
-              href="#nosotros"
+              href="/nosotros"
             >
               Nosotros
             </Link>

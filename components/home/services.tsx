@@ -127,12 +127,23 @@ export const Services: FC<ServicesProps> = () => {
   };
   return (
     <section className="px-4">
-      <div className="max-w-7xl mx-auto w-full py-20 flex flex-col gap-16">
+      <div
+        className={cn(
+          "max-w-7xl w-full",
+          "flex flex-col gap-8 lg:gap-12",
+          "mx-auto py-16 lg:py-20"
+        )}
+      >
         <div className="flex flex-col gap-2 text-center">
-          <h2 className="text-2xl lg:text-3xl xl:text-5xl font-medium text-primary-900">
+          <h2
+            className={cn(
+              "font-medium text-primary-900",
+              "text-3xl lg:text-4xl xl:text-5xl"
+            )}
+          >
             Nuestros Servicios
           </h2>
-          <p className="text-sm md:text-base font-light text-neutral-500 text-balance">
+          <p className="text-sm font-light text-neutral-500 text-balance">
             En Ventifresh FR, nos especializamos en ofrecer las siguientes
             soluciones
           </p>
@@ -160,19 +171,19 @@ export const Services: FC<ServicesProps> = () => {
                   alt={service.alt}
                 />
 
-                <div className="p-2 flex flex-col gap-6 flex-1 xl:p-4 bg-neutral-50">
+                <div className="flex flex-col gap-6 flex-1 p-4 bg-neutral-50">
                   <div className="flex flex-col gap-1 flex-1">
-                    <h3 className="text-lg lg:text-xl xl:text-2xl font-medium text-primary-900">
+                    <h3 className="text-xl xl:text-2xl font-medium text-primary-900">
                       {service.title}
                     </h3>
-                    <p className="text-sm xl:text-base font-light text-neutral-500">
+                    <p className="text-base leading-snug font-light text-neutral-500">
                       {service.description}
                     </p>
                   </div>
                   <div className="flex gap-4">
                     <Link
                       className={buttonVariants({
-                        className: "lg:h-12 lg:px-10 lg:text-lg",
+                        className: "",
                       })}
                       href="/contacto"
                     >
@@ -181,7 +192,7 @@ export const Services: FC<ServicesProps> = () => {
                     <Link
                       className={buttonVariants({
                         variant: "outline",
-                        className: "lg:h-12 lg:px-10 lg:text-lg",
+                        className: "",
                       })}
                       href="/servicios"
                     >
