@@ -15,7 +15,7 @@ import Autoplay from "embla-carousel-autoplay";
 interface ServicesProps {}
 
 interface Service {
-  id: string;
+  slug: string;
   title: string;
   description: string;
   image: string;
@@ -24,7 +24,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    id: "instalacion-aire-acondicionado",
+    slug: "instalacion-de-aire-acondicionado",
     title: "Instalación de Aire Acondicionado",
     description:
       "Diseñamos e instalamos sistemas de aire acondicionado adaptados a tus necesidades. Garantía de instalación profesional y asesoría personalizada.",
@@ -32,7 +32,7 @@ const services: Service[] = [
     alt: "Instalación de Aire Acondicionado",
   },
   {
-    id: "mantenimiento-aire-acondicionado",
+    slug: "mantenimiento-de-aire-acondicionado",
     title: "Mantenimiento de Aire Acondicionado",
     description:
       "Ofrecemos mantenimiento preventivo y correctivo para equipos residenciales, comerciales e industriales. Evita fallas y prolonga la vida útil de tus equipos.",
@@ -40,7 +40,7 @@ const services: Service[] = [
     alt: "Mantenimiento de Aire Acondicionado",
   },
   {
-    id: "mantenimiento-tableros-electricos",
+    slug: "mantenimiento-de-tableros-electricos",
     title: "Mantenimiento de Tableros Eléctricos",
     description:
       "Revisamos, limpiamos y optimizamos tus tableros eléctricos para garantizar un funcionamiento seguro y eficiente de tus equipos de climatización.",
@@ -48,7 +48,7 @@ const services: Service[] = [
     alt: "Mantenimiento de Tableros Eléctricos",
   },
   {
-    id: "mantenimiento-ventilacion-mecanica",
+    slug: "mantenimiento-de-ventilacion-mecanica",
     title: "Mantenimiento de Ventilación Mecánica",
     description:
       "Realizamos limpieza y calibración de sistemas de ventilación mecánica para mantener la calidad del aire y el rendimiento energético óptimo.",
@@ -162,7 +162,7 @@ export const Services: FC<ServicesProps> = () => {
           <CarouselContent>
             {services.map((service) => (
               <CarouselItem
-                key={service.id}
+                key={service.slug}
                 className="flex flex-col md:basis-1/2 lg:basis-1/3"
               >
                 <img
@@ -194,7 +194,7 @@ export const Services: FC<ServicesProps> = () => {
                         variant: "outline",
                         className: "",
                       })}
-                      href="/servicios"
+                      href={`/${service.slug}`}
                     >
                       Ver Detalle
                     </Link>

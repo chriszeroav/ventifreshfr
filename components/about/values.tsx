@@ -41,11 +41,11 @@ export const Values: FC<ValuesProps> = () => {
       <div
         className={cn(
           "max-w-7xl w-full",
-          "flex flex-col gap-8",
+          "flex flex-col gap-8 md:gap-12",
           "mx-auto py-16 lg:py-20"
         )}
       >
-        <div className="flex flex-col items-center gap-1 text-center">
+        <div className="flex flex-col items-center gap-1 text-center max-w-3xl mx-auto">
           <h2
             className={cn(
               "text-2xl md:text-3xl lg:text-4xl",
@@ -54,17 +54,32 @@ export const Values: FC<ValuesProps> = () => {
           >
             Trabajamos para ofrecerte confort, eficiencia y confianza
           </h2>
-          <p className="text-neutral-500 font-light">
+          <p className="text-neutral-600 font-light">
             Nuestro compromiso es brindar soluciones integrales de climatización
             y ventilación que mejoren la vida de las personas
           </p>
         </div>
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-10 md:grid md:grid-cols-3">
           {values.map(({ id, title, description, icon: Icon }) => (
-            <li key={id} className="flex flex-col gap-2">
-              <Icon />
-              <h3>{title}</h3>
-              <p>{description}</p>
+            <li
+              key={id}
+              className={cn(
+                "flex flex-col items-center gap-2",
+                "text-center bg-neutral-50 p-6 md:bg-transparent"
+              )}
+            >
+              <div
+                className={cn(
+                  "size-12 rounded-full flex items-center justify-center ",
+                  "text-white bg-primary-600"
+                )}
+              >
+                <Icon className="size-6" />
+              </div>
+              <h3 className="text-xl font-semibold text-primary-800">
+                {title}
+              </h3>
+              <p className="text-neutral-600 font-light">{description}</p>
             </li>
           ))}
         </ul>

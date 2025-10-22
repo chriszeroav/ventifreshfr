@@ -7,3 +7,4 @@ export * from "./air-filter";
 export * from "./target";
 export * from "./rocket";
 export * from "./heart";
+export * from "./snowflake";

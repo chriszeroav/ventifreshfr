@@ -50,17 +50,19 @@ export const Contact: FC<ContactProps> = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-8"
+        className="flex flex-col gap-4 md:gap-8"
       >
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-neutral-500 ml-1">Nombre</FormLabel>
+              <FormLabel className="text-neutral-500 ml-1 text-sm md:text-base">
+                Nombre
+              </FormLabel>
               <FormControl>
                 <Input
-                  className="h-12 bg-white shadow placeholder:text-neutral-400 text-neutral-900"
+                  className="md:h-12 bg-white shadow placeholder:text-neutral-400 text-neutral-900 text-sm md:text-base"
                   placeholder="Ingresa tu nombre"
                   disabled={loading}
                   {...field}
@@ -75,15 +77,12 @@ export const Contact: FC<ContactProps> = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <div className="flex items-center gap-1">
-                <FormLabel className="text-neutral-500 ml-1">Correo*</FormLabel>
-                <span className="text-xs text-primary-800">
-                  (correo donde le llegara la respuesta)
-                </span>
-              </div>
+              <FormLabel className="text-neutral-500 ml-1 text-sm md:text-base">
+                Correo
+              </FormLabel>
               <FormControl>
                 <Input
-                  className="h-12 bg-white shadow placeholder:text-neutral-400 text-neutral-900"
+                  className="md:h-12 bg-white shadow placeholder:text-neutral-400 text-neutral-900 text-sm md:text-base"
                   placeholder="Ingresa tu correo"
                   disabled={loading}
                   {...field}
@@ -99,10 +98,12 @@ export const Contact: FC<ContactProps> = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-neutral-500 ml-1">Mensaje</FormLabel>
+              <FormLabel className="text-neutral-500 ml-1 text-sm md:text-base">
+                Mensaje
+              </FormLabel>
               <FormControl>
                 <Textarea
-                  className="resize-none bg-white shadow placeholder:text-neutral-400 text-neutral-900"
+                  className="resize-none bg-white shadow placeholder:text-neutral-400 text-neutral-900 text-sm md:text-base"
                   placeholder="Ingresa tu mensaje"
                   disabled={loading}
                   {...field}
@@ -112,7 +113,11 @@ export const Contact: FC<ContactProps> = () => {
             </FormItem>
           )}
         />
-        <Button className="h-12 text-lg" type="submit" disabled={loading}>
+        <Button
+          className="h-12 text-lg mt-3 md:mt-0"
+          type="submit"
+          disabled={loading}
+        >
           {loading ? "Enviando..." : "Enviar Mensaje"}
         </Button>
       </form>

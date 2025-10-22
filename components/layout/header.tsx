@@ -53,25 +53,25 @@ export const Header: FC<HeaderProps> = async () => {
               >
                 <Link
                   className="hover:text-primary-600 transition-colors"
-                  href="#mantenimiento-de-aire-acondicionado"
+                  href="/mantenimiento-de-aire-acondicionado"
                 >
                   Mantenimiento de aire acondicionado
                 </Link>
                 <Link
                   className="hover:text-primary-600 transition-colors"
-                  href="#instalacion-de-aire-acondicionado"
+                  href="/instalacion-de-aire-acondicionado"
                 >
                   Instalacion de aire acondicionado
                 </Link>
                 <Link
                   className="hover:text-primary-600 transition-colors"
-                  href="#mantenimiento-de-tableros-electricos"
+                  href="/mantenimiento-de-tableros-electricos"
                 >
                   Mantenimiento de tableros eléctricos
                 </Link>
                 <Link
                   className="hover:text-primary-600 transition-colors"
-                  href="#mantenimiento-de-ventilacion-mecanica"
+                  href="/mantenimiento-de-ventilacion-mecanica"
                 >
                   Mantenimiento de ventilación mecánica
                 </Link>
@@ -84,7 +84,7 @@ export const Header: FC<HeaderProps> = async () => {
               Nosotros
             </Link>
             <Link
-              href="#contacto"
+              href="/contacto"
               className="hover:text-primary-600 transition-colors"
             >
               Contacto

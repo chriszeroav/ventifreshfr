@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.variable}`}>
-        <div>
+        <div className="min-h-dvh flex flex-col">
           <TopHeader />
           <Header />
           {children}
