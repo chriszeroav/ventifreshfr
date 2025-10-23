@@ -15,8 +15,8 @@ export const Brands: FC<BrandsProps> = () => {
       >
         <h2
           className={cn(
-            "text-3xl lg:text-4xl xl:text-5xl",
-            "text-primary-900 text-center font-medium"
+            "text-2xl sm:text-3xl lg:text-4xl",
+            "text-primary-900 text-center font-semibold"
           )}
         >
           Empresas que ya confían en nosotros

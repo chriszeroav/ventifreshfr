@@ -1,5 +1,5 @@
 import { Hero, Services, WhyUs } from "@/components/home";
-import { Brands, Contact } from "@/components/layout";
+import { Brands, Gallery } from "@/components/layout";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <Services />
       <Brands />
       <WhyUs />
+      <Gallery />
     </main>
   );
 }

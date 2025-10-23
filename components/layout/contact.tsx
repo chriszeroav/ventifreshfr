@@ -34,7 +34,7 @@ export const Contact: FC<ContactProps> = () => {
 
           <ul className="flex flex-col gap-5">
             <li className="flex items-center gap-4">
-              <div className="bg-primary-600 p-2 md:p-3 rounded-full">
+              <div className="bg-orange-500 p-2 md:p-3 rounded-full">
                 <MailIcon className="text-neutral-50 size-6 md:size-7" />
               </div>
               <div className="flex flex-col">
@@ -46,7 +46,7 @@ export const Contact: FC<ContactProps> = () => {
             </li>
 
             <li className="flex items-center gap-4">
-              <div className="bg-primary-600 p-2 md:p-3 rounded-full">
+              <div className="bg-orange-500 p-2 md:p-3 rounded-full">
                 <PhoneIcon className="text-neutral-50 size-6 md:size-7" />
               </div>
               <div className="flex flex-col">
@@ -60,7 +60,7 @@ export const Contact: FC<ContactProps> = () => {
             </li>
 
             <li className="flex items-center gap-4">
-              <div className="bg-primary-600 p-2 md:p-3 rounded-full">
+              <div className="bg-orange-500 p-2 md:p-3 rounded-full">
                 <PhoneIcon className="text-neutral-50 size-6 md:size-7" />
               </div>
               <div className="flex flex-col">

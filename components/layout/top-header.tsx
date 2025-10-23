@@ -68,7 +68,7 @@ export const TopHeader = () => {
           subLabel="Segundo canal telefónico"
         />
         <Link
-          href="#contacto"
+          href="/contacto"
           className={buttonVariants({
             variant: "default",
             className: "h-full text-lg px-6",

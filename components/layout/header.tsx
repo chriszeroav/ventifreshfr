@@ -1,6 +1,15 @@
+"use client";
+
 import React, { FC } from "react";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Button,
+  buttonVariants,
   Drawer,
+  DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
@@ -11,17 +20,17 @@ import {
   HoverCardTrigger,
 } from "@/components/shadcn";
 import { cn } from "@/lib/utils";
-import { ChevronDownIcon, MenuIcon } from "lucide-react";
+import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 
 interface HeaderProps {}
 
-export const Header: FC<HeaderProps> = async () => {
+export const Header: FC<HeaderProps> = () => {
   return (
     <header className="px-4">
       <div
         className={cn(
-          "max-w-7xl w-full mx-auto h-20 py-3",
+          "max-w-7xl w-full mx-auto h-16 md:h-20 py-3",
           "flex items-center justify-between"
         )}
       >
@@ -91,7 +100,7 @@ export const Header: FC<HeaderProps> = async () => {
             </Link>
           </div>
 
-          <div className="md:hidden">
+          <div className="flex items-center md:hidden">
             <Drawer direction="right">
               <DrawerTrigger>
                 <MenuIcon />
@@ -99,8 +108,99 @@ export const Header: FC<HeaderProps> = async () => {
               <DrawerContent>
                 <DrawerHeader className="sr-only">
                   <DrawerTitle>Menu</DrawerTitle>
-                  <DrawerDescription>Descripción del menu</DrawerDescription>
+                  <DrawerDescription>
+                    Navegación principal del sitio
+                  </DrawerDescription>
                 </DrawerHeader>
+                <div
+                  className={cn(
+                    "h-[60px] px-3",
+                    "flex items-center justify-between",
+                    "border-b border-neutral-300"
+                  )}
+                >
+                  <h2 className="text-xl font-medium text-neutral-800">Menu</h2>
+                  <DrawerClose asChild>
+                    <Button variant="ghost" size="icon">
+                      <XIcon className="size-8 text-neutral-800" />
+                    </Button>
+                  </DrawerClose>
+                </div>
+                <nav className="p-3 flex flex-col gap-5">
+                  <DrawerClose asChild>
+                    <Link
+                      className={cn(
+                        buttonVariants({ variant: "link" }),
+                        "justify-start px-2"
+                      )}
+                      href="/nosotros"
+                    >
+                      Nosotros
+                    </Link>
+                  </DrawerClose>
+                  <DrawerClose asChild>
+                    <Link
+                      className={cn(
+                        buttonVariants({ variant: "link" }),
+                        "justify-start px-2"
+                      )}
+                      href="/contacto"
+                    >
+                      Contacto
+                    </Link>
+                  </DrawerClose>
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="servicios">
+                      <AccordionTrigger>Servicios</AccordionTrigger>
+                      <AccordionContent className="p-0">
+                        <DrawerClose asChild>
+                          <Link
+                            className={cn(
+                              buttonVariants({ variant: "link" }),
+                              "justify-start h-auto"
+                            )}
+                            href="/mantenimiento-de-aire-acondicionado"
+                          >
+                            Mantenimiento de aire acondicionado
+                          </Link>
+                        </DrawerClose>
+                        <DrawerClose asChild>
+                          <Link
+                            className={cn(
+                              buttonVariants({ variant: "link" }),
+                              "justify-start h-auto"
+                            )}
+                            href="/instalacion-de-aire-acondicionado"
+                          >
+                            Instalacion de aire acondicionado
+                          </Link>
+                        </DrawerClose>
+                        <DrawerClose asChild>
+                          <Link
+                            className={cn(
+                              buttonVariants({ variant: "link" }),
+                              "justify-start h-auto"
+                            )}
+                            href="/mantenimiento-de-tableros-electricos"
+                          >
+                            Mantenimiento de tableros eléctricos
+                          </Link>
+                        </DrawerClose>
+                        <DrawerClose asChild>
+                          <Link
+                            className={cn(
+                              buttonVariants({ variant: "link" }),
+                              "justify-start h-auto"
+                            )}
+                            href="/mantenimiento-de-ventilacion-mecanica"
+                          >
+                            Mantenimiento de ventilación mecánica
+                          </Link>
+                        </DrawerClose>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </nav>
               </DrawerContent>
             </Drawer>
           </div>

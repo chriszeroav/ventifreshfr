@@ -31,16 +31,17 @@ const BenefitsCard: FC<BenefitsCardProps> = ({
     >
       <div
         className={cn(
-          "size-12 rounded-full flex items-center justify-center text-white",
+          "flex items-center justify-center",
+          "size-10 lg:size-12 rounded-full text-white",
           active ? "bg-white/30" : "bg-primary-600"
         )}
       >
-        <SnowflakeIcon className="size-6" />
+        <SnowflakeIcon className="size-5 lg:size-6" />
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-1">
         <h3
           className={cn(
-            "text-lg font-medium",
+            "text-lg font-medium lg:text-xl",
             active ? "text-white" : "text-primary-900"
           )}
         >
@@ -48,7 +49,7 @@ const BenefitsCard: FC<BenefitsCardProps> = ({
         </h3>
         <p
           className={cn(
-            "leading-relaxed font-light",
+            "text-sm font-light text-balance lg:text-base",
             active ? "text-white" : "text-neutral-600"
           )}
         >
@@ -65,14 +66,15 @@ export const Benefits: FC<BenefitsProps> = ({ items, title }) => {
       <div
         className={cn(
           "max-w-7xl w-full",
-          "flex flex-col gap-8 lg:gap-12",
-          "mx-auto py-10 lg:py-20"
+          "flex flex-col gap-12 lg:gap-16",
+          "mx-auto py-16 lg:py-20"
         )}
       >
         <h2
           className={cn(
-            "font-medium text-primary-900",
-            "text-3xl lg:text-4xl xl:text-5xl"
+            "font-semibold text-primary-900",
+            "text-2xl sm:text-3xl lg:text-4xl",
+            "text-center"
           )}
         >
           {title}
@@ -80,8 +82,9 @@ export const Benefits: FC<BenefitsProps> = ({ items, title }) => {
 
         <div
           className={cn(
-            "grid grid-cols-1 gap-6",
-            "sm:grid-cols-2 lg:grid-cols-3 xl:gap-8"
+            "grid grid-cols-1 gap-8",
+            "sm:grid-cols-2 gap-12",
+            "lg:grid-cols-3 lg:auto-rows-[290px]"
           )}
         >
           {items.map((item) => (

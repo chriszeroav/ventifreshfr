@@ -122,8 +122,8 @@ export const WhyUs: FC<WhyUsProps> = () => {
       >
         <h2
           className={cn(
-            "font-medium text-primary-900",
-            "text-3xl lg:text-4xl xl:text-5xl"
+            "font-semibold text-primary-900",
+            "text-2xl sm:text-3xl lg:text-4xl"
           )}
         >
           ¿Por qué elegirnos?

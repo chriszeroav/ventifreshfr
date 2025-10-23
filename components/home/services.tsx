@@ -126,7 +126,7 @@ export const Services: FC<ServicesProps> = () => {
     }
   };
   return (
-    <section className="px-4">
+    <section id="servicios" className="px-4">
       <div
         className={cn(
           "max-w-7xl w-full",
@@ -137,13 +137,18 @@ export const Services: FC<ServicesProps> = () => {
         <div className="flex flex-col gap-2 text-center">
           <h2
             className={cn(
-              "font-medium text-primary-900",
-              "text-3xl lg:text-4xl xl:text-5xl"
+              "font-semibold text-primary-900",
+              "text-2xl sm:text-3xl lg:text-4xl"
             )}
           >
             Nuestros Servicios
           </h2>
-          <p className="text-sm font-light text-neutral-500 text-balance">
+          <p
+            className={cn(
+              "text-sm sm:text-base text-balance",
+              "font-light text-neutral-500"
+            )}
+          >
             En Ventifresh FR, nos especializamos en ofrecer las siguientes
             soluciones
           </p>
@@ -180,19 +185,13 @@ export const Services: FC<ServicesProps> = () => {
                       {service.description}
                     </p>
                   </div>
-                  <div className="flex gap-4">
-                    <Link
-                      className={buttonVariants({
-                        className: "",
-                      })}
-                      href="/contacto"
-                    >
+                  <div className="flex gap-4 ">
+                    <Link className={buttonVariants()} href="/contacto">
                       Contactar
                     </Link>
                     <Link
                       className={buttonVariants({
-                        variant: "outline",
-                        className: "",
+                        variant: "ghost",
                       })}
                       href={`/${service.slug}`}
                     >

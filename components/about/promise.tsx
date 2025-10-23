@@ -37,7 +37,7 @@ export const Promise: FC<PromiseProps> = () => {
           <p
             className={cn(
               "text-neutral-600 font-medium px-6",
-              "border-l-8 border-primary-500",
+              "border-l-8 border-orange-500",
               "lg:text-lg text-balance"
             )}
           >

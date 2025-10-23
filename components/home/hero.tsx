@@ -96,10 +96,10 @@ export const Hero: FC<HeroProps> = () => {
               </Link>
               <Link
                 className={buttonVariants({
-                  variant: "outline",
+                  variant: "secondary",
                   className: "lg:h-12 lg:px-12 lg:text-lg",
                 })}
-                href="/servicios"
+                href="#servicios"
               >
                 Ver Servicios
               </Link>
